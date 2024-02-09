@@ -1,5 +1,5 @@
 """
-Parse content by URL
+Parse content by data.json
 """
 import requests
 from bs4 import BeautifulSoup
@@ -12,50 +12,39 @@ def parse_page(url):
     :param url:
     :return:
     """
-    # Make a request to the URL
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the HTML content
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-        content_data = list()
-        # li_obj = dict()
-        for items in soup.find('div', class_='sitemap').find("ul"):
-            if items.text.strip() == "":
-                continue
-            for item in items.find_all("li"):
-                li_obj = dict(
-                    name=item.text.strip(),
-                    url=item.find("a").get("href")
-                )
-                content_data.append(li_obj)
-
-        return content_data
-    else:
-        print("Error:", response.status_code)
-        print("Error Message:", response.text)
-        return []
 
 
-def save_to_json_file(data):
+def read_json_file(file_name):
     """
-    Save data to file
-    :param data:
+    Read data from file
+    :param file_name:
     :return:
     """
     import json
-    with open('data.json', 'w') as outfile:
-        json.dump(data, outfile)
+    with open(file_name) as json_file:
+        data = json.load(json_file)
+        return data
 
 
 if __name__ == '__main__':
-    # URL of the sitemap
-    sitemap_url = "https://www.ucell.uz/uz/sitemap"
+    pages = read_json_file("data.json")
+    i = 0
+    for page in pages:
+        page_url = page['url'].removeprefix("/uz")
+        if page_url.find("/myucell/press_srv") != -1:
+            continue
+        if page_url.find("/subscribers/tariffs/") != -1:
+            """Tariffs"""
+            i += 1
+            print(i, page_url)
+        elif page_url.find("/subscribers/services2/") != -1:
+            """Services"""
+            i += 1
+            print(i, page_url)
 
-    # Parse the sitemap and get the list of URLs
-    content_data = parse_page(sitemap_url)
-    print(content_data)
+        # content_data = parse_page(url["url"])
+        # print(content_data)
+    # content_data = parse_page(sitemap_url)
+    # print(content_data)
     # Save the data to a file
-    save_to_json_file(content_data)
+    # save_to_json_file(content_data)
