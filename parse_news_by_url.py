@@ -39,7 +39,7 @@ def parse_page(url):
         return []
 
 
-def save_to_json_file(data):
+def save_to_json_file(data, idx):
     """
     Save data to file
     :param data:
@@ -47,7 +47,7 @@ def save_to_json_file(data):
     """
     import json
     # file encoding utf-8
-    with open('parsed_news2.json', 'w', encoding='utf-8') as outfile:
+    with open(f'parsed_news{idx}.json', 'w', encoding='utf-8') as outfile:
         # save to file
         json.dump(data, outfile, ensure_ascii=False)
 
@@ -85,4 +85,6 @@ if __name__ == '__main__':
             #
             # if idx == 2:
             #     break
-        save_to_json_file(news_list)
+            if idx % 50 == 0:
+                print(idx)
+                save_to_json_file(news_list, idx)
