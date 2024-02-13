@@ -47,7 +47,7 @@ def save_to_json_file(data, idx):
     """
     import json
     # file encoding utf-8
-    with open(f'parsed_news{idx}.json', 'w', encoding='utf-8') as outfile:
+    with open(f'parsed_news_2_3_{idx}.json', 'w', encoding='utf-8') as outfile:
         # save to file
         json.dump(data, outfile, ensure_ascii=False)
 
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         data = json.load(json_file)
         news_list = list()
         idx = 0
-        for url in data["abonents"]["types"]["urls_2"]:
+        for url in data["corporate"]["types"]["urls_2"]:
             idx += 1
             print(idx, url)
             content_data = parse_page(base_url + url)
@@ -85,6 +85,7 @@ if __name__ == '__main__':
             #
             # if idx == 2:
             #     break
-            if idx % 50 == 0:
-                print(idx)
-                save_to_json_file(news_list, idx)
+            # if idx % 50 == 0:
+            #     print(idx)
+        save_to_json_file(news_list, idx)
+                # break

@@ -3572,24 +3572,24 @@
   "corporate": {
     "types": {
       "urls_1": [
-        "https://ucell.uz/ru/news/2024/02/07/esim",
-        "https://ucell.uz/ru/news/2024/01/22/Planned_work_app_24.01",
-        "https://ucell.uz/ru/news/2024/01/15/changes_in_number_re-execution_service",
-        "https://ucell.uz/ru/news/2023/12/27/Operation_of_services_on_holidays_corp",
-        "https://ucell.uz/ru/news/2023/12/27/Public_Offer",
-        "https://ucell.uz/ru/news/2023/12/06/Dear_subscribers",
-        "https://ucell.uz/ru/news/2023/11/09/changes_on_tariff_plans",
-        "https://ucell.uz/ru/news/2023/11/08/Roaming_on_board_an_aircraft"
+        "/ru/news/2024/02/07/esim",
+        "/ru/news/2024/01/22/Planned_work_app_24.01",
+        "/ru/news/2024/01/15/changes_in_number_re-execution_service",
+        "/ru/news/2023/12/27/Operation_of_services_on_holidays_corp",
+        "/ru/news/2023/12/27/Public_Offer",
+        "/ru/news/2023/12/06/Dear_subscribers",
+        "/ru/news/2023/11/09/changes_on_tariff_plans",
+        "/ru/news/2023/11/08/Roaming_on_board_an_aircraft"
       ],
       "urls_2": [
-        "https://ucell.uz/ru/news/2024/01/22/Planned_work_app",
-        "https://ucell.uz/ru/news/2024/01/19/planned_work_21_01",
-        "https://ucell.uz/ru/news/2024/01/09/Planned_work",
-        "https://ucell.uz/ru/news/2023/12/20/Planned_work",
-        "https://ucell.uz/ru/news/2023/12/19/Planned_work_tariffs_services",
-        "https://ucell.uz/ru/news/2023/12/19/planned_work_app_20.12",
-        "https://ucell.uz/ru/news/2023/09/27/Planned_work_28.09",
-        "https://ucell.uz/ru/news/2023/09/26/Planned_work_27.09"
+        "/ru/news/2024/01/22/Planned_work_app",
+        "/ru/news/2024/01/19/planned_work_21_01",
+        "/ru/news/2024/01/09/Planned_work",
+        "/ru/news/2023/12/20/Planned_work",
+        "/ru/news/2023/12/19/Planned_work_tariffs_services",
+        "/ru/news/2023/12/19/planned_work_app_20.12",
+        "/ru/news/2023/09/27/Planned_work_28.09",
+        "/ru/news/2023/09/26/Planned_work_27.09"
       ]
     }
   }
